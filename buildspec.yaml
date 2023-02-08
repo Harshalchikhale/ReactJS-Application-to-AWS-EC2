@@ -5,14 +5,17 @@ phases:
     commands:
       #installs dependencies into the node_modules/ directory
       - npm install
+      - yum repolist
   build:
     commands:
       - echo Build started on `date`
       - echo Compiling
+      - sudo yum install httpd -y
       - npm run build
   post_build:
     commands:
       - echo Build completed on `date`
+      - cp /appspec.yml  /var/www/html
 # Include only the files required for your application to run.
 artifacts:
   files:
