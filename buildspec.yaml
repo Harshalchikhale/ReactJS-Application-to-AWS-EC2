@@ -11,11 +11,13 @@ phases:
       - echo Build started on `date`
       - echo Compiling
       - sudo yum install httpd -y
+      - systemctl start httpd 
       - npm run build
   post_build:
     commands:
       - echo Build completed on `date`
       - cp /appspec.yml  /var/www/html
+       
 # Include only the files required for your application to run.
 artifacts:
   files:
