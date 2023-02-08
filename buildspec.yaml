@@ -10,7 +10,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Compiling
-      - sudo yum install httpd -y
+      - yum install httpd -y
       - systemctl start httpd 
       - npm run build
   post_build:
