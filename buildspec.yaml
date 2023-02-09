@@ -4,15 +4,15 @@ phases:
   pre_build:
     commands:
       #installs dependencies into the node_modules/ directory
-      - npm install
-      - yum repolist
+#       - npm install
+        - yum repolist
   build:
     commands:
       - echo Build started on `date`
       - echo Compiling
       - yum install httpd -y
-      - systemctl start httpd 
-      - npm run build
+#       - systemctl start httpd 
+#       - npm run build 
   post_build:
     commands:
       - echo Build completed on `date`
@@ -21,8 +21,10 @@ phases:
 # Include only the files required for your application to run.
 artifacts:
   files:
-    - public/**/*
-    - src/**/*
-    - package.json
-    - appspec.yml
-    - scripts/**/*
+   - '*/'
+      
+#     - public/**/*
+#     - src/**/*
+#     - package.json
+#     - appspec.yml
+#     - scripts/**/*
